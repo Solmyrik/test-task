@@ -24,7 +24,7 @@ export const boardSlice = createSlice({
   name: 'board',
   initialState,
   reducers: {
-    onStartGame: (state, action) => {
+    onStartGame: (state, action: PayloadAction<number>) => {
       state.isStart = true;
       state.items = generationField(16, action.payload);
       state.startValue = action.payload;
@@ -37,7 +37,7 @@ export const boardSlice = createSlice({
       state.indexesZero = [];
       state.quantity = 0;
     },
-    clear: (state, action) => {
+    clear: (state, action: PayloadAction<number>) => {
       const currentIndexes: any = [];
       const map: any = [];
       let index = action.payload;
@@ -67,7 +67,6 @@ export const boardSlice = createSlice({
         }
       }
       state.indexesZero = [...state.indexesZero, ...currentIndexes];
-      //      let set = new Set(currentIndexes);
     },
     gameOver: (state) => {
       state.isGameOver = true;

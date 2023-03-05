@@ -1,9 +1,9 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect } from 'react';
 import Button from '../Button/Button';
 import Counter from '../Counter/Counter';
 import styles from './Header.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import type { RootState, AppDispatch } from '../../redux/store';
+import type { RootState } from '../../redux/store';
 import { onAddTime } from '../../redux/slices/timerSlice';
 
 const Header: FC = () => {

@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 interface IButton {
   isAfraid: boolean;
@@ -17,7 +18,7 @@ export const buttonSlice = createSlice({
     onChangeButton: (state) => {
       state.isAfraid = !state.isAfraid;
     },
-    gameOverButton: (state, action) => {
+    gameOverButton: (state, action: PayloadAction<boolean>) => {
       state.isGameOverButton = action.payload;
     },
   },

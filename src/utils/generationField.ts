@@ -1,6 +1,6 @@
 const Mine = -1;
 
-export const generationField = (size: number, startValue: number) => {
+export const generationField = (size: number, startValue: number): number[] => {
   const field = new Array(size * size).fill(0);
   const startValues = [
     startValue,

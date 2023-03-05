@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 interface ITime {
   time: number;
@@ -14,7 +15,7 @@ export const timerSlice = createSlice({
   name: 'timer',
   initialState,
   reducers: {
-    onChangeFlags: (state, action) => {
+    onChangeFlags: (state, action: PayloadAction<boolean>) => {
       if (state.flags >= 0) {
         if (action.payload === true) {
           state.flags = state.flags - 1;
@@ -23,7 +24,7 @@ export const timerSlice = createSlice({
         }
       }
     },
-    onAddTime: (state, action) => {
+    onAddTime: (state, action: PayloadAction<number>) => {
       state.time = action.payload;
     },
     restartTimer: (state) => {
