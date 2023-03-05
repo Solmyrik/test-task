@@ -1,0 +1,11 @@
+@import '../../styles/variables.scss';
+
+.board {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  width: 500px;
+  font-size: 24px;
+  @include border-container;
+}

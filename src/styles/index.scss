@@ -1,11 +1,27 @@
+@import 'null.scss';
+@import 'variables.scss';
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.134);
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+#root {
+  height: 100%;
+}
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.App {
+  border: 4.2px solid $gray;
+  border-left-color: $white;
+  border-top-color: $white;
+  max-width: 535px;
+  background-color: $light-gray;
+  padding: 16px;
 }

@@ -1,0 +1,11 @@
+@import '../../styles/variables.scss';
+
+.header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-gray;
+  @include border-container;
+  width: 490px;
+}

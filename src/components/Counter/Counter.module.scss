@@ -1,0 +1,47 @@
+@import '../../styles/variables.scss';
+
+.counter {
+  width: 80px;
+  height: 50px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__num {
+    width: 26px;
+    height: 46px;
+    display: block;
+    background-image: url('../../assets/images/sprites.png');
+    @include spritesWidth2X;
+  }
+}
+.zero {
+  background-position: 26px 0;
+}
+.one {
+  background-position: 0px 0;
+}
+.two {
+  background-position: -28px 0;
+}
+.three {
+  background-position: -56px 0;
+}
+.four {
+  background-position: -84px 0;
+}
+.five {
+  background-position: -112px 0;
+}
+.six {
+  background-position: -140px 0;
+}
+.seven {
+  background-position: -168px 0;
+}
+.eight {
+  background-position: -196px 0;
+}
+.nine {
+  background-position: -224px 0;
+}

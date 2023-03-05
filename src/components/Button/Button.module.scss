@@ -1,0 +1,27 @@
+@import '../../styles/variables.scss';
+
+.button {
+  width: 52px;
+  height: 52px;
+  background-color: transparent;
+  cursor: pointer;
+  background-image: url('../../assets/images/sprites.png');
+  @include spritesWidth2X;
+  background-position: 0px -48px;
+  &:active {
+    background-position: -54px -48px;
+  }
+}
+.gameover {
+  background-position: -216px -48px;
+  &:active {
+    background-position: -216px -48px;
+  }
+}
+.win {
+  background-position: -162px -48px;
+}
+
+.danger {
+  background-position: -108px -48px;
+}
