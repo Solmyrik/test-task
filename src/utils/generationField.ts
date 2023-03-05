@@ -1,5 +1,3 @@
-const Mine = -1;
-
 export const generationField = (size: number, startValue: number): number[] => {
   const field = new Array(size * size).fill(0);
   const startValues = [
@@ -25,14 +23,14 @@ export const generationField = (size: number, startValue: number): number[] => {
 
     const inc = (x: number, y: number) => {
       if (x >= 0 && x < size && y >= 0 && y < size) {
-        if (field[y * size + x] === Mine) return;
+        if (field[y * size + x] === -1) return;
         field[y * size + x] += 1;
       }
     };
 
-    if (field[y * size + x] === Mine) continue;
+    if (field[y * size + x] === -1) continue;
 
-    field[y * size + x] = Mine;
+    field[y * size + x] = -1;
     i++;
 
     inc(x + 1, y);
