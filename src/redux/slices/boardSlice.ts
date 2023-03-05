@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { generationField } from '../../utils/generationField';
-import { findСoordinates } from '../../utils/findСoordinates';
 
 interface IBoard {
   items: number[];

@@ -1,17 +1,17 @@
 import { FC, useState, useCallback, useEffect } from 'react';
 import styles from './Cell.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import type { RootState, AppDispatch } from '../../redux/store';
+import type { RootState } from '../../redux/store';
 import { clear, gameOver, onAddCell, onStartGame } from '../../redux/slices/boardSlice';
 import { onChangeFlags, restartFlag } from '../../redux/slices/timerSlice';
 import { gameOverButton, onChangeButton } from '../../redux/slices/buttonSlice';
 
 interface CellProps {
-  value: number | 'b';
+  value: number;
   index: number;
 }
 
-const defineCell = (value: number | 'b') => {
+const defineCell = (value: number): string | undefined => {
   if (value === -1) return styles.bomb;
   if (value === 0) return styles.zero;
   if (value === 1) return styles.one;
@@ -22,15 +22,15 @@ const defineCell = (value: number | 'b') => {
 
 const Cell: FC<CellProps> = ({ value, index }) => {
   const dispatch = useDispatch();
-  const [active, setActive] = useState(false);
-  const [appearance, setAppearance] = useState(defineCell(value));
+  const [active, setActive] = useState<boolean>(false);
+  const [appearance, setAppearance] = useState<string | undefined>(defineCell(value));
   const isStart = useSelector((state: RootState) => state.board.isStart);
   const isActiveZero = useSelector((state: RootState) => state.board.indexesZero);
   const table = useSelector((state: RootState) => state.board.items);
   const startValue = useSelector((state: RootState) => state.board.startValue);
   const isGameOver = useSelector((state: RootState) => state.board.isGameOver);
 
-  const onClick = () => {
+  const onClick = (): void => {
     if (isGameOver === true) return;
     if (appearance === styles.flag) return;
     setActive(true);
@@ -93,7 +93,7 @@ const Cell: FC<CellProps> = ({ value, index }) => {
     [active, appearance, isGameOver],
   );
 
-  const onMouseDown = () => {
+  const onMouseDown = (): void => {
     if (isGameOver === true) return;
     dispatch(onChangeButton());
   };
@@ -101,7 +101,6 @@ const Cell: FC<CellProps> = ({ value, index }) => {
   return (
     <button
       onMouseDown={onMouseDown}
-      // onMouseLeave={onMouseDown}
       onMouseUp={onMouseDown}
       onContextMenu={handlerFlag}
       onClick={onClick}
